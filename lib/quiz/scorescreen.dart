@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/game.dart';
+import 'package:flutter_app/main.dart';
 import 'package:flutter_app/quiz/questioncontroller.dart';
 import 'package:get/get.dart';
 
@@ -41,8 +42,9 @@ class ScoreScreen extends StatelessWidget {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.green),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Game()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyApp()));
+                  //the screen doesn't  blank anymore but the questions don't reload
                 },
                 child: Container(
                   width: 100,
@@ -52,7 +54,6 @@ class ScoreScreen extends StatelessWidget {
                     child: Text(
                       'Back',
                       style: TextStyle(
-                        fontFamily: 'Itim',
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),

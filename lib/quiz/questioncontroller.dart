@@ -10,7 +10,7 @@ class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
   late PageController _pageController;
 
-  PageController get pageController => this._pageController; // ke tha error nis
+  PageController get pageController => this._pageController;
 
   List<Question> _questions = sampleData
       .map(
@@ -82,7 +82,7 @@ class QuestionController extends GetxController
     if (_questionNumber.value != 5) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: Duration(milliseconds: 120), curve: Curves.ease);
+          duration: Duration(milliseconds: 100), curve: Curves.ease);
     } else {
       Get.to(ScoreScreen(
         key: Get.key,
