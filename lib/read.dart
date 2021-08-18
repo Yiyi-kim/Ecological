@@ -17,14 +17,14 @@ class _ReadState extends State<Read> {
         Text(
           'GoloBal Warming',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.green,
             fontSize: 27,
             fontWeight: FontWeight.bold,
             fontFamily: 'itim'
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.transparent,
         elevation: 0
       ),
       body: ListView(
@@ -74,7 +74,7 @@ class _ReadState extends State<Read> {
                         Column(
                           children: [
                             SizedBox(height: 20,),
-                            Text('Burend Plastic', style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
+                            Text('Burend Plastic', style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
                           ],)
                       ],
                     ),
@@ -121,7 +121,7 @@ class _ReadState extends State<Read> {
                         Column(
                           children: [
                             SizedBox(height: 20,),
-                            Text('Food waste', style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
+                            Text('Food waste', style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
                           ],)
                       ],
                     ),
@@ -166,7 +166,7 @@ class _ReadState extends State<Read> {
                         Column(
                           children: [
                             SizedBox(height: 20,),
-                            Text('Fossile fuel', style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
+                            Text('Fossile fuel', style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
                           ],)
                       ],
                     ),
@@ -211,7 +211,7 @@ class _ReadState extends State<Read> {
                         Column(
                           children: [
                             SizedBox(height: 20,),
-                            Text('Cutting Trees', style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
+                            Text('Cutting Trees', style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'itim')),
                           ],)
                       ],
                     ),

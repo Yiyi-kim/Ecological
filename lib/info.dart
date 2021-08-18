@@ -16,14 +16,14 @@ class _InfoState extends State<Info> {
         Text(
           'App Info',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.green,
             fontSize: 27,
             fontWeight: FontWeight.bold,
             fontFamily: 'itim'
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.transparent,
         elevation: 0
       ),
       body: ListView(
