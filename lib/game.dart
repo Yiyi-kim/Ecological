@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Recycle/Screen/first_screen.dart';
 import 'package:flutter_app/quiz/start_quiz.dart';
 
 class Game extends StatefulWidget {
@@ -38,7 +39,10 @@ class _GameState extends State<Game> {
             primary: Colors.transparent,
             elevation: 0,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => FirstScreen()));
+          },
           child: Container(
             width: 260,
             height: 130,

@@ -16,9 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Itim',
       ),
+      initialRoute: '/',
+      routes: {
+        '/game': (context) => const Game(),
+      },
       title: 'Recycle',
       home: MyStatefulWidget(),
     );
