@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/Cartoon/foodwaste.dart';
 
 class Read extends StatefulWidget {
@@ -11,6 +12,9 @@ class Read extends StatefulWidget {
 class _ReadState extends State<Read> {
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setEnabledSystemUIOverlays([]);
+
     return Scaffold(
       appBar: AppBar(
         title: const
