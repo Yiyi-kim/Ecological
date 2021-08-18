@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class GoBackButton extends StatelessWidget {
+class GoBackButton extends StatelessWidget{
   final VoidCallback press;
   final Widget text;
 
@@ -9,12 +9,12 @@ class GoBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 300,
       height: 50,
       decoration: BoxDecoration(
         color: Colors.green,
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(17),
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
@@ -23,10 +23,8 @@ class GoBackButton extends StatelessWidget {
           ),
         ],
       ),
-      child: TextButton(
-        child: text,
-        onPressed: press,
-      ),
+      child: TextButton(child: text, onPressed: press,),
     );
   }
+
 }

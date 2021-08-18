@@ -86,8 +86,9 @@ class _FirstScreen extends State<FirstScreen>
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (context) => TooltipDialog('Instructions',
-                          '1. Take 2-litre bottle \n 2. Cut it into half \n 3. Clean thoroughly \n 4. Drag the upper half then put the soil in \n 5. Place it in the bottom half \n \n'),
+                      builder: (context) =>
+                          TooltipDialog('Instructions',
+                              '1. Take 2-litre bottle \n 2. Cut it into half \n 3. Clean thoroughly \n 4. Drag the upper half then put the soil in \n 5. Place it in the bottom half \n \n Done!!'),
                     );
                   },
                   icon: Icon(
@@ -99,24 +100,30 @@ class _FirstScreen extends State<FirstScreen>
               ),
               if (step == 0) ...[
                 ImagesContainer('assets/images/empty_bottle.png')
-              ] else if (step == 1) ...[
-                // ImagesContainer('assets/images/empty_bottle.png'),
-                // Baseline(
-                //   baseline: animation.value,
-                //   baselineType: TextBaseline.alphabetic,
-                //   child: Image(
-                //     image: AssetImage('assets/images/scissor.png'),
-                //   ),
-                // ),
+              ] else
+                if (step == 1) ...[
+
+                    // ImagesContainer('assets/images/empty_bottle.png'),
+                    // Baseline(
+                    //   baseline: animation.value,
+                    //   baselineType: TextBaseline.alphabetic,
+                    //   child: Image(
+                    //     image: AssetImage('assets/images/scissor.png'),
+                    //   ),
+                    // ),
 
                 ImagesContainer('assets/images/top_half_bottle.png'),
-              ] else if (step == 2) ...[
-                ImagesContainer('assets/images/top_half_bottle.png')
-              ] else if (step == 3) ...[
-                ImagesContainer('assets/images/plant_in_top_half_bottle.png')
-              ] else ...[
-                ImagesContainer('assets/images/combind_bottle.png')
-              ],
+              ] else
+                  if (step == 2) ...[
+                    ImagesContainer('assets/images/top_half_bottle.png')
+                  ] else
+                    if (step == 3) ...[
+                      ImagesContainer(
+                          'assets/images/plant_in_top_half_bottle.png')
+                    ] else
+                      ...[
+                        ImagesContainer('assets/images/combind_bottle.png')
+                      ],
               SizedBox(
                 height: 20.0,
               ),
@@ -151,7 +158,7 @@ class _FirstScreen extends State<FirstScreen>
                       if (step != 0 && step == 3) {
                         putTheBottleTogether();
                         print(step);
-                        Future.delayed(const Duration(seconds: 2), () {
+                        Future.delayed(const Duration(seconds: 5), () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
