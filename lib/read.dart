@@ -38,12 +38,7 @@ class _ReadState extends State<Read> {
                     ]
                 ),
                 child:GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => foodwaste())
-                    );
-                  },
+                  onTap: () {},
                   child:
                   Row(mainAxisAlignment: MainAxisAlignment.start,
                     children: [
