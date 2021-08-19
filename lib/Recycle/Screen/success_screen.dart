@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Recycle/Components/go_back_button.dart';
 import 'package:flutter_app/Recycle/Screen/first_screen.dart';
+import 'package:flutter_app/mystateful_widget.dart';
 
 class SuccessScreen extends StatelessWidget {
   @override
@@ -39,7 +40,7 @@ class SuccessScreen extends StatelessWidget {
           ),
           GoBackButton(
             () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> FirstScreen()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> MyStatefulWidget()));
             },
             Text(
               "Go Back",
