@@ -21,9 +21,12 @@ class SuccessScreen extends StatelessWidget {
           SizedBox(
             height: 16.0,
           ),
-          Text(
-            'There are many more way to recycle plastic. Find out by yourselves!',
-            style: TextStyle(fontSize: 16.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32.0),
+            child: Text(
+              'There are many more way to recycle plastic. Find out by yourselves!',
+              style: TextStyle(fontSize: 16.0),
+            ),
           ),
           SizedBox(
             height: 16.0,
