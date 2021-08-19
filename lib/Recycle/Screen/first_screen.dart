@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Recycle/Components/image_button.dart';
 import 'package:flutter_app/Recycle/Components/image_container.dart';
@@ -9,29 +11,13 @@ class FirstScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _FirstScreen();
 }
 
-class _FirstScreen extends State<FirstScreen>
-    with SingleTickerProviderStateMixin {
+class _FirstScreen extends State<FirstScreen> {
   int step = 0;
-  late AnimationController controller;
-  late Animation<double> animation;
-  var alreadyCut = false;
 
   var scissorVisibility = true;
   var tissueVisibility = true;
   var dirtVisibility = true;
-  var bottleVisibility = true;
-
-  void cutMotion() {
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    animation = Tween<double>(begin: 0, end: 1).animate(controller)
-      ..addListener(() {
-        setState(() {
-          alreadyCut = true;
-        });
-      });
-    controller.forward();
-  }
+  Tween<double> _scaleTween = Tween<double>(begin: 1, end: 2);
 
   void cutTheBottle() {
     setState(() {
@@ -51,13 +37,6 @@ class _FirstScreen extends State<FirstScreen>
     setState(() {
       dirtVisibility = false;
       step = 3;
-    });
-  }
-
-  void putTheBottleTogether() {
-    setState(() {
-      bottleVisibility = false;
-      step = 4;
     });
   }
 
@@ -86,9 +65,8 @@ class _FirstScreen extends State<FirstScreen>
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (context) =>
-                          TooltipDialog('Instructions',
-                              '1. Take 2-litre bottle \n 2. Cut it into half \n 3. Clean thoroughly \n 4. Drag the upper half then put the soil in \n 5. Place it in the bottom half \n \n Done!!'),
+                      builder: (context) => TooltipDialog('Instructions',
+                          '1. Take 2-litre bottle \n 2. Cut it into half \n 3. Drag the upper half then put the soil in \n 4. Place it in the bottom half \n \n Done!!'),
                     );
                   },
                   icon: Icon(
@@ -100,30 +78,13 @@ class _FirstScreen extends State<FirstScreen>
               ),
               if (step == 0) ...[
                 ImagesContainer('assets/images/empty_bottle.png')
-              ] else
-                if (step == 1) ...[
-
-                    // ImagesContainer('assets/images/empty_bottle.png'),
-                    // Baseline(
-                    //   baseline: animation.value,
-                    //   baselineType: TextBaseline.alphabetic,
-                    //   child: Image(
-                    //     image: AssetImage('assets/images/scissor.png'),
-                    //   ),
-                    // ),
-
+              ] else if (step == 1) ...[
                 ImagesContainer('assets/images/top_half_bottle.png'),
-              ] else
-                  if (step == 2) ...[
-                    ImagesContainer('assets/images/top_half_bottle.png')
-                  ] else
-                    if (step == 3) ...[
-                      ImagesContainer(
-                          'assets/images/plant_in_top_half_bottle.png')
-                    ] else
-                      ...[
-                        ImagesContainer('assets/images/combind_bottle.png')
-                      ],
+              ] else if (step == 2) ...[
+                ImagesContainer('assets/images/plant_in_top_half_bottle.png'),
+              ] else ...[
+                ImagesContainer('assets/images/combind_bottle.png'),
+              ],
               SizedBox(
                 height: 20.0,
               ),
@@ -135,31 +96,23 @@ class _FirstScreen extends State<FirstScreen>
                     ImageButton("assets/images/scissor.png", () {
                       if (step == 0) {
                         cutTheBottle();
-                        cutMotion();
                         print(step);
                       }
                     }),
                   if (tissueVisibility)
-                    ImageButton('assets/images/tissue.png', () {
+                    ImageButton('assets/images/plant.png', () {
                       if (step != 0 && step == 1) {
                         cleanTheBottle();
                         print(step);
                       }
                     }),
                   if (dirtVisibility)
-                    ImageButton('assets/images/plant.png', () {
+                    ImageButton('assets/images/bottom_half_bottle.png', () {
                       if (step != 0 && step == 2) {
                         addSoil();
                         print(step);
-                      }
-                    }),
-                  if (bottleVisibility)
-                    ImageButton('assets/images/bottom_half_bottle.png', () {
-                      if (step != 0 && step == 3) {
-                        putTheBottleTogether();
-                        print(step);
-                        Future.delayed(const Duration(seconds: 5), () {
-                          Navigator.push(
+                        Future.delayed(Duration(seconds: 2), () {
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (_) => SuccessScreen()));
