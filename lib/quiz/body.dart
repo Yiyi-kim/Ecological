@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/quiz/questioncard.dart';
-import 'package:flutter_app/quiz/questioncontroller.dart';
+import 'package:flutter_app/quiz/question_card.dart';
+import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:get/get.dart';
 
 class Body extends StatelessWidget {
@@ -42,8 +42,7 @@ class Body extends StatelessWidget {
                 onPageChanged: _questionController.updateTheQnNum,
                 itemCount: list.length,
                 itemBuilder: (context, index) {
-                  return QuestionCard(
-                      question: list[index]);
+                  return QuestionCard(question: list[index]);
                 },
               ),
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/quiz/option.dart';
-import 'package:flutter_app/quiz/questioncontroller.dart';
+import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:flutter_app/quiz/questions.dart';
 import 'package:get/get.dart';
 

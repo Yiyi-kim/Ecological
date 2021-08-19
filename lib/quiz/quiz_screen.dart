@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/quiz/body.dart';
-import 'package:flutter_app/quiz/questioncontroller.dart';
+import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:get/get.dart';
 
-class QuizScreen extends StatelessWidget {
-  const QuizScreen({Key? key}) : super(key: key);
+class QuizScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _QuizScreen();
+}
 
+class _QuizScreen extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     var _controller = Get.put(QuestionController());

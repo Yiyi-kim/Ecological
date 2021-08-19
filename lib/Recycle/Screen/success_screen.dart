@@ -20,27 +20,32 @@ class SuccessScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 16.0,
+            height: 20.0,
+          ),
+          Text(
+            'There are many more ways to recycle plastic.',
+            style: TextStyle(fontSize: 16.0),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
             child: Text(
-              'There are many more way to recycle plastic. Find out by yourselves!',
+              'Find out by yourselves!',
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           SizedBox(
-            height: 16.0,
+            height: 20.0,
           ),
           Image(
             image: AssetImage('assets/images/welldone.png'),
           ),
           SizedBox(
-            height: 16.0,
+            height: 20.0,
           ),
           GoBackButton(
             () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> MyStatefulWidget()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (_) => MyStatefulWidget()));
             },
             Text(
               "Go Back",

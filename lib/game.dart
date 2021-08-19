@@ -17,7 +17,7 @@ class _GameState extends State<Game> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 10,
+          height: 15,
         ),
         Container(
           child: Text(
@@ -26,7 +26,7 @@ class _GameState extends State<Game> {
                 fontFamily: 'Itim',
                 color: Colors.green,
                 fontWeight: FontWeight.bold,
-                fontSize: 25),
+                fontSize: 27),
           ),
         ),
         Image.asset(

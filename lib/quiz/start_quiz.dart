@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/quiz/quizscreen.dart';
+import 'package:flutter_app/quiz/quiz_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({Key? key}) : super(key: key);
@@ -59,8 +59,8 @@ class _QuizState extends State<Quiz> {
                   MaterialPageRoute(builder: (context) => QuizScreen()));
             },
             child: Container(
-              width: 100,
-              height: 40,
+              width: 150,
+              height: 50,
               child: Align(
                 alignment: Alignment.center,
                 child: Text(

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Recycle/Components/image_button.dart';
 import 'package:flutter_app/Recycle/Components/image_container.dart';

@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/quiz/questions.dart';
-import 'package:flutter_app/quiz/scorescreen.dart';
+import 'package:flutter_app/quiz/score_screen.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
