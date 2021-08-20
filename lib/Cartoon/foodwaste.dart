@@ -3,7 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/read.dart';
 import 'package:flutter_app/mystateful_widget.dart';
+
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MyStatefulWidget(),
+      '/fw1' : (context) => Cartoon1(),
+      '/fw2' : (context) => Cartoon2()
+    },
+  ));
+}
 
 class FoodWaste extends StatefulWidget {
   const FoodWaste({Key? key}) : super(key: key);
@@ -13,6 +25,13 @@ class FoodWaste extends StatefulWidget {
 }
 
 class _FoodWaste extends State<FoodWaste> {
+
+  static Route<void> _Rd(BuildContext context, Object? arguments) {
+    return MaterialPageRoute<void>(
+        builder: (BuildContext context) => const MyStatefulWidget()
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -37,9 +56,9 @@ class _FoodWaste extends State<FoodWaste> {
         Icon(Icons.arrow_back_rounded,
             size: 35, color: Colors.green),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyStatefulWidget())
+              Navigator.of(context).restorablePushAndRemoveUntil(
+                  _Rd,
+                  ModalRoute.withName('/fw1')
               );
             }
         ),
@@ -53,9 +72,9 @@ class _FoodWaste extends State<FoodWaste> {
 class Cartoon1 extends StatelessWidget {
   const Cartoon1({Key? key}) : super(key: key);
 
-  static Route<void> _fw1(BuildContext context, Object? arguments) {
+  static Route<void> _fw2(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-      builder: (BuildContext context) => const Cartoon1()
+        builder: (BuildContext context) => const Cartoon2()
     );
   }
 
@@ -100,14 +119,9 @@ class Cartoon1 extends StatelessWidget {
                     icon: const Icon(Icons.arrow_right,size: 30),
                     color: Colors.white,
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Cartoon2())
-                      );
-
                       Navigator.of(context).restorablePushAndRemoveUntil(
-                          _fw1,
-                          ModalRoute.withName('/')
+                          _fw2,
+                        ModalRoute.withName('/fw1')
                       );
                     },
                   ),
@@ -123,9 +137,9 @@ class Cartoon1 extends StatelessWidget {
 class Cartoon2 extends StatelessWidget {
   const Cartoon2({Key? key}) : super(key: key);
 
-  static Route<void> _fw2(BuildContext context, Object? arguments) {
+  static Route<void> _Rd(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon2()
+        builder: (BuildContext context) => const Read()
     );
   }
 
@@ -157,8 +171,8 @@ class Cartoon2 extends StatelessWidget {
               );
 
               Navigator.of(context).restorablePushAndRemoveUntil(
-                _fw2,
-                ModalRoute.withName('/')
+                _Rd,
+                ModalRoute.withName('/fw2')
               );
             }
         ),
@@ -217,9 +231,9 @@ class Cartoon2 extends StatelessWidget {
                           icon: const Icon(Icons.view_headline_rounded,size: 30),
                           color: Colors.white,
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => MyStatefulWidget())
+                            Navigator.of(context).restorablePushAndRemoveUntil(
+                              _Rd,
+                              ModalRoute.withName('/fw2')
                             );
                           },
                         ),
