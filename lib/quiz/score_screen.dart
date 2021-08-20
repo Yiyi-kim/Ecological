@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/Recycle/Components/go_back_button.dart';
 import 'package:flutter_app/game.dart';
 import 'package:flutter_app/main.dart';
@@ -27,7 +28,7 @@ class ScoreScreen extends StatelessWidget {
                       .headline3!
                       .copyWith(color: Colors.green)),
               SizedBox(height: 20),
-              Text("${_qnController.correctAns * 10}/${50}",
+              Text("${_qnController.numOfCorrectAns * 10}/${50}",
                   style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 50),
               Image.asset(
@@ -41,6 +42,7 @@ class ScoreScreen extends StatelessWidget {
               ),
               GoBackButton(
                 () {
+                  _qnController.refreshState();
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (_) => MyStatefulWidget()));
                 },

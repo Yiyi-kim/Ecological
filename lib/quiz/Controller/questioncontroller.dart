@@ -1,5 +1,6 @@
 import 'dart:math';
-
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/quiz/questions.dart';
 import 'package:flutter_app/quiz/score_screen.dart';
@@ -49,10 +50,15 @@ class QuestionController extends GetxController
 
   @override
   void onInit() {
-    _pageController = PageController();
+    _pageController = PageController(initialPage: 1, keepPage: false);
     update();
     super.onInit();
+    _pageController.addListener(() {
+      _questionNumber.value = _pageController.page!.round() + 1;
+    });
   }
+
+  void resetQuestionNumber() => _questionNumber.value = 1;
 
   //Called just b4 the controller is deleted from the memory
   @override
@@ -72,6 +78,13 @@ class QuestionController extends GetxController
     Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
+
+    // Future.delayed(Duration(seconds: 2), () {
+    //   Navigator.pushReplacement(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (_) => ScoreScreen()));
+    // });
   }
 
   void updateTheQnNum(int index) {
@@ -102,5 +115,20 @@ class QuestionController extends GetxController
     }
     // print('sublist::${subList[3].answer}');
     return subList;
+  }
+
+  void refreshState() {
+    _questionNumber.value = 1;
+    _numOfCorrectAns = 0;
+    _selectedAns = 0;
+    _correctAns = 0;
+    _isAnswered = false;
+    //  final _questionController = Get.put(QuestionController());
+    //dispose();
+    //_pageController.dispose();
+    //late int _pageController = 0;
+    //PageController _pageController =0 as PageController;
+    //_pageController.dispose();
+    //pageController.jumpToPage(0);
   }
 }

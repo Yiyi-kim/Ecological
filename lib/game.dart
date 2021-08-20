@@ -17,7 +17,7 @@ class _GameState extends State<Game> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 15,
+          height: 30,
         ),
         Container(
           child: Text(
