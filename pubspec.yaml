@@ -37,7 +37,7 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/images/ecological_logo.png
+  image: assets/images/Ecological.png
   android: true
   ios: true
 

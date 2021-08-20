@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/quiz/body.dart';
 import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,10 @@ class _QuizScreen extends State<QuizScreen> {
     var _controller = Get.put(QuestionController());
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          'Quiz',
+        ),
+        centerTitle: true,
         backgroundColor: Colors.green,
         actions: [],
       ),
