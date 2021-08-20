@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/Cartoon/foodwaste.dart';
+import 'package:flutter_app/Cartoon/burendplastic.dart';
+import 'package:flutter_app/Cartoon/fossilefuel.dart';
+import 'package:flutter_app/Cartoon/cuttingtree.dart';
 
 class Read extends StatefulWidget {
   const Read({Key? key}) : super(key: key);
@@ -57,7 +60,9 @@ class _ReadState extends State<Read> {
                         offset: Offset(1, 3))
                   ]),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BurendPlastic()));},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -176,7 +181,10 @@ class _ReadState extends State<Read> {
                         offset: Offset(1, 3))
                   ]),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FossileFuel()));
+                  },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -234,7 +242,10 @@ class _ReadState extends State<Read> {
                         offset: Offset(1, 3))
                   ]),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CuttingTree()));
+                  },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
