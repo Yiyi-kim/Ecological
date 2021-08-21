@@ -44,7 +44,7 @@ class _InfoState extends State<Info> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: 10,),
-              Image.asset('android/app/src/main/res/drawable-xxxhdpi/splash.png', height: 130,),
+              Image.asset('assets/images/splash.png', height: 130,),
               SizedBox(height: 10,),
               Text(
                 'Ecological',
@@ -66,7 +66,7 @@ class _InfoState extends State<Info> {
                 ),
               ),
               SizedBox(height: 20,),
-              Row(mainAxisAlignment: MainAxisAlignment.end,
+              Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     height: 90,
@@ -106,8 +106,7 @@ class _InfoState extends State<Info> {
                           ],)
                     ),
                   ),
-                  SizedBox(width: 20,)
-                ],),
+                ]),
               SizedBox(height: 20,),
               Row(mainAxisAlignment: MainAxisAlignment.start,
                   children: [
