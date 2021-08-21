@@ -98,7 +98,7 @@ class Cartoon1 extends StatelessWidget {
                           offset: Offset(1,1)
                       )],
                     image: DecorationImage(
-                        image: AssetImage('assets/cartoon/cuttingtree/cutting1.jpg'),
+                        image: AssetImage('assets/cartoon/cuttingtree/tree1.jpg'),
                         fit: BoxFit.fill
                     )
                 ),
@@ -202,7 +202,7 @@ class Cartoon2 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/cuttingtree/cutting2.jpg'),
+                          image: AssetImage('assets/cartoon/cuttingtree/tree2.jpg'),
                           fit: BoxFit.fill
                       )
                   ),
@@ -306,7 +306,7 @@ class Cartoon3 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/cuttingtree/cutting3.jpg'),
+                          image: AssetImage('assets/cartoon/cuttingtree/tree3.jpg'),
                           fit: BoxFit.fill
                       )
                   ),

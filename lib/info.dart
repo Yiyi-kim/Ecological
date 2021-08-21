@@ -44,7 +44,7 @@ class _InfoState extends State<Info> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: 10,),
-              Image.asset('assets/images/trash.jpeg', height: 130,),
+              Image.asset('android/app/src/main/res/drawable-xxxhdpi/splash.png', height: 130,),
               SizedBox(height: 10,),
               Text(
                 'Ecological',
