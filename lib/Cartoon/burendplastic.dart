@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/read.dart';
 import 'package:flutter_app/mystateful_widget.dart';
 
 void main() {
@@ -18,14 +17,7 @@ void main() {
   ));
 }
 
-class FoodWaste extends StatefulWidget {
-  const FoodWaste({Key? key}) : super(key: key);
-
-  @override
-  _FoodWaste createState() => _FoodWaste();
-}
-
-class _FoodWaste extends State<FoodWaste> {
+class BurendPlastic extends StatelessWidget {
 
   static Route<void> _Rd(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
@@ -42,7 +34,7 @@ class _FoodWaste extends State<FoodWaste> {
       appBar: AppBar(
         title: const
         Text(
-          'Food Waste',
+          'Burend Plastic',
           style: TextStyle(
             color: Colors.green,
             fontSize: 27,
@@ -71,7 +63,7 @@ class _FoodWaste extends State<FoodWaste> {
 }
 
 class Cartoon1 extends StatelessWidget {
-  const Cartoon1({Key? key}) : super(key: key);
+  const Cartoon1({Key? key}) : super(key : key);
 
   static Route<void> _fw2(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
@@ -99,7 +91,7 @@ class Cartoon1 extends StatelessWidget {
                           offset: Offset(1,1)
                       )],
                     image: DecorationImage(
-                        image: AssetImage('assets/cartoon/foodwaste/food1.jpg'),
+                        image: AssetImage('assets/cartoon/burendplastic/plastic1.jpg'),
                         fit: BoxFit.fill
                     )
                 ),
@@ -111,21 +103,15 @@ class Cartoon1 extends StatelessWidget {
           Row(children: [
             Expanded(flex: 4, child: Container(color: Colors.transparent.withOpacity(0))),
             Expanded(flex: 1,
-                child: Ink(
-                  decoration: const ShapeDecoration(
-                    color: Colors.blueAccent,
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_right,size: 30),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).restorablePushAndRemoveUntil(
-                          _fw2,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.of(context).restorablePushAndRemoveUntil(
+                        _fw2,
                         ModalRoute.withName('/fw1')
-                      );
-                    },
-                  ),
+                    );
+                  },
+                  child: const Icon(Icons.arrow_right,size: 40),
+                  backgroundColor: Colors.blueAccent,
                 )
             ),
           ])
@@ -138,15 +124,6 @@ class Cartoon1 extends StatelessWidget {
 class Cartoon2 extends StatelessWidget {
   const Cartoon2({Key? key}) : super (key : key);
 
-  void main() {
-    runApp(MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/fw2' : (context) => Cartoon2()
-      },
-    ));
-  }
-
   static Route<void> _fw3(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
         builder: (BuildContext context) => const Cartoon3()
@@ -155,13 +132,13 @@ class Cartoon2 extends StatelessWidget {
 
   static Route<void> _Rd(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const MyStatefulWidget()
+      builder: (BuildContext context) => const MyStatefulWidget()
     );
   }
 
   static Route<void> _fw1(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon1()
+      builder: (BuildContext context) => const Cartoon1()
     );
   }
 
@@ -211,7 +188,7 @@ class Cartoon2 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/foodwaste/food2.jpg'),
+                          image: AssetImage('assets/cartoon/burendplastic/plastic2.jpg'),
                           fit: BoxFit.fill
                       )
                   ),
@@ -222,41 +199,29 @@ class Cartoon2 extends StatelessWidget {
                 SizedBox(height: 15),
                 Row(children: [
                   Expanded(flex: 1,
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: Colors.redAccent,
-                          shape: CircleBorder(),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(Icons.arrow_left,size: 30),
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                                _fw1,
-                                ModalRoute.withName('/fw2')
-                            );
-                          },
-                        ),
-                      )
+                    child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.of(context).restorablePushAndRemoveUntil(
+                              _fw1,
+                              ModalRoute.withName('/fw2')
+                          );
+                        },
+                        child: const Icon(Icons.arrow_left,size: 40),
+                      backgroundColor: Colors.redAccent,
+                    ),
                   ),
                   Expanded(flex: 3, child: Container(color: Colors.transparent.withOpacity(0))),
                   Expanded(flex: 1,
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: Colors.blueAccent,
-                          shape: CircleBorder(),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(Icons.arrow_right,size: 30),
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                                _fw3,
-                                ModalRoute.withName('/fw2')
-                            );
-                          },
-                        ),
-                      )
+                      child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.of(context).restorablePushAndRemoveUntil(
+                            _fw3,
+                            ModalRoute.withName('/fw2')
+                          );
+                        },
+                        child: const Icon(Icons.arrow_right,size: 40),
+                        backgroundColor: Colors.blueAccent,
+                      ),
                   ),
                 ])
               ])
@@ -267,17 +232,17 @@ class Cartoon2 extends StatelessWidget {
 }
 
 class Cartoon3 extends StatelessWidget {
-  const Cartoon3({Key? key}) : super(key: key);
+  const Cartoon3({Key? key}) : super(key : key);
 
   static Route<void> _fw2(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-      builder: (BuildContext context) => const Cartoon2()
+        builder: (BuildContext context) => const Cartoon2()
     );
   }
 
   static Route<void> _Rd(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const MyStatefulWidget()
+      builder: (BuildContext context) => const MyStatefulWidget()
     );
   }
 
@@ -287,14 +252,13 @@ class Cartoon3 extends StatelessWidget {
       appBar: AppBar(
         title: const
         Text(
-          'Food Waste',
+          'Burend Plastic',
           style: TextStyle(
               color: Colors.green,
               fontSize: 27,
               fontWeight: FontWeight.bold,
               fontFamily: 'itim'
           ),
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent.withOpacity(0),
@@ -303,14 +267,9 @@ class Cartoon3 extends StatelessWidget {
         Icon(Icons.arrow_back_rounded,
             size: 35, color: Colors.green),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyStatefulWidget())
-              );
-
               Navigator.of(context).restorablePushAndRemoveUntil(
-                _Rd,
-                ModalRoute.withName('/fw3')
+                  _Rd,
+                  ModalRoute.withName('/fw3')
               );
             }
         ),
@@ -333,7 +292,7 @@ class Cartoon3 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/foodwaste/food3.jpg'),
+                          image: AssetImage('assets/cartoon/burendplastic/plastic3.jpg'),
                           fit: BoxFit.fill
                       )
                   ),

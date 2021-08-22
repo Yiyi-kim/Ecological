@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/read.dart';
 import 'package:flutter_app/mystateful_widget.dart';
 
 void main() {
@@ -18,20 +17,21 @@ void main() {
   ));
 }
 
-class FoodWaste extends StatefulWidget {
-  const FoodWaste({Key? key}) : super(key: key);
+class FossileFuel extends StatefulWidget {
+  const FossileFuel({Key? key}) : super(key: key);
 
   @override
-  _FoodWaste createState() => _FoodWaste();
+  _FossileFuel createState() => _FossileFuel();
 }
 
-class _FoodWaste extends State<FoodWaste> {
+class _FossileFuel extends State<FossileFuel> {
 
   static Route<void> _Rd(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
         builder: (BuildContext context) => const MyStatefulWidget()
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _FoodWaste extends State<FoodWaste> {
       appBar: AppBar(
         title: const
         Text(
-          'Food Waste',
+          'Fossie Fuel',
           style: TextStyle(
             color: Colors.green,
             fontSize: 27,
@@ -58,8 +58,8 @@ class _FoodWaste extends State<FoodWaste> {
             size: 35, color: Colors.green),
             onPressed: () {
               Navigator.of(context).restorablePushAndRemoveUntil(
-                  _Rd,
-                  ModalRoute.withName('/fw1')
+                _Rd,
+                ModalRoute.withName('/fw1')
               );
             }
         ),
@@ -78,6 +78,7 @@ class Cartoon1 extends StatelessWidget {
         builder: (BuildContext context) => const Cartoon2()
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +100,7 @@ class Cartoon1 extends StatelessWidget {
                           offset: Offset(1,1)
                       )],
                     image: DecorationImage(
-                        image: AssetImage('assets/cartoon/foodwaste/food1.jpg'),
+                        image: AssetImage('assets/cartoon/fossiefuel/fuel1.jpg'),
                         fit: BoxFit.fill
                     )
                 ),
@@ -121,7 +122,7 @@ class Cartoon1 extends StatelessWidget {
                     color: Colors.white,
                     onPressed: () {
                       Navigator.of(context).restorablePushAndRemoveUntil(
-                          _fw2,
+                        _fw2,
                         ModalRoute.withName('/fw1')
                       );
                     },
@@ -136,15 +137,12 @@ class Cartoon1 extends StatelessWidget {
 }
 
 class Cartoon2 extends StatelessWidget {
-  const Cartoon2({Key? key}) : super (key : key);
+  const Cartoon2({Key? key}) : super(key: key);
 
-  void main() {
-    runApp(MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/fw2' : (context) => Cartoon2()
-      },
-    ));
+  static Route<void> _fw1(BuildContext context, Object? arguments) {
+    return MaterialPageRoute<void>(
+        builder: (BuildContext context) => const Cartoon1()
+    );
   }
 
   static Route<void> _fw3(BuildContext context, Object? arguments) {
@@ -159,11 +157,6 @@ class Cartoon2 extends StatelessWidget {
     );
   }
 
-  static Route<void> _fw1(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon1()
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +164,7 @@ class Cartoon2 extends StatelessWidget {
       appBar: AppBar(
         title: const
         Text(
-          'Burend Plastic',
+          'Fossie Fuel',
           style: TextStyle(
               color: Colors.green,
               fontSize: 27,
@@ -187,8 +180,8 @@ class Cartoon2 extends StatelessWidget {
             size: 35, color: Colors.green),
             onPressed: () {
               Navigator.of(context).restorablePushAndRemoveUntil(
-                  _Rd,
-                  ModalRoute.withName('/fw2')
+                _Rd,
+                ModalRoute.withName('/fw2')
               );
             }
         ),
@@ -211,7 +204,7 @@ class Cartoon2 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/foodwaste/food2.jpg'),
+                          image: AssetImage('assets/cartoon/fossiefuel/fuel2.jpg'),
                           fit: BoxFit.fill
                       )
                   ),
@@ -232,10 +225,10 @@ class Cartoon2 extends StatelessWidget {
                           color: Colors.white,
                           onPressed: () {
                             Navigator.of(context).restorablePushAndRemoveUntil(
-                                _fw1,
-                                ModalRoute.withName('/fw2')
+                              _fw1,
+                              ModalRoute.withName('/fw2')
                             );
-                          },
+                          }
                         ),
                       )
                   ),
@@ -251,8 +244,8 @@ class Cartoon2 extends StatelessWidget {
                           color: Colors.white,
                           onPressed: () {
                             Navigator.of(context).restorablePushAndRemoveUntil(
-                                _fw3,
-                                ModalRoute.withName('/fw2')
+                              _fw3,
+                              ModalRoute.withName('/fw2')
                             );
                           },
                         ),
@@ -267,11 +260,11 @@ class Cartoon2 extends StatelessWidget {
 }
 
 class Cartoon3 extends StatelessWidget {
-  const Cartoon3({Key? key}) : super(key: key);
+  const Cartoon3({Key? key}) : super(key : key);
 
   static Route<void> _fw2(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-      builder: (BuildContext context) => const Cartoon2()
+        builder: (BuildContext context) => const Cartoon2()
     );
   }
 
@@ -281,20 +274,20 @@ class Cartoon3 extends StatelessWidget {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const
         Text(
-          'Food Waste',
+          'Fossie Fuel',
           style: TextStyle(
               color: Colors.green,
               fontSize: 27,
               fontWeight: FontWeight.bold,
               fontFamily: 'itim'
           ),
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent.withOpacity(0),
@@ -303,15 +296,10 @@ class Cartoon3 extends StatelessWidget {
         Icon(Icons.arrow_back_rounded,
             size: 35, color: Colors.green),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyStatefulWidget())
-              );
-
-              Navigator.of(context).restorablePushAndRemoveUntil(
-                _Rd,
-                ModalRoute.withName('/fw3')
-              );
+          Navigator.of(context).restorablePushAndRemoveUntil(
+            _Rd,
+            ModalRoute.withName('/fw3')
+          );
             }
         ),
       ),
@@ -333,7 +321,7 @@ class Cartoon3 extends StatelessWidget {
                             offset: Offset(1,1)
                         )],
                       image: DecorationImage(
-                          image: AssetImage('assets/cartoon/foodwaste/food3.jpg'),
+                          image: AssetImage('assets/cartoon/fossiefuel/fuel3.jpg'),
                           fit: BoxFit.fill
                       )
                   ),
