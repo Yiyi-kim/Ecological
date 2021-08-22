@@ -521,7 +521,7 @@ void _fontlog(BuildContext context) async {
                 children: [
                   Image.asset('assets/images/fontitim.jpeg'),
                   SizedBox(height: 5),
-                  Text('link')
+                  Text('https://fonts.google.com/specimen/Itim?query=Itim#standard-styles')
                 ],
               ),
             ),
@@ -559,7 +559,7 @@ void _plalog(BuildContext context) async {
                 children: [
                   Image.asset('assets/images/trash.jpeg'),
                   SizedBox(height: 5),
-                  Text('link')
+                  Text('https://img.jakpost.net/c/2018/03/28/2018_03_28_43006_1522227353._large.jpg')
                 ],
               ),
             ),
@@ -597,7 +597,7 @@ void _foodlog(BuildContext context) async {
                 children: [
                   Image.asset('assets/images/foodtrash.jpeg'),
                   SizedBox(height: 5),
-                  Text('link')
+                  Text('https://blog.trycake.com/hubfs/Imported_Blog_Media/food-waste-blog.jpg')
                 ],
               ),
             ),
@@ -635,7 +635,7 @@ void _smokelog(BuildContext context) async {
                 children: [
                   Image.asset('assets/images/smoke.jpeg'),
                   SizedBox(height: 5),
-                  Text('link')
+                  Text('https://soundhealthexplorer.org/site/assets/files/4952/take_action_use_less_fossil_fuels.jpg')
                 ],
               ),
             ),
@@ -673,7 +673,7 @@ void _treelog(BuildContext context) async {
                 children: [
                   Image.asset('assets/images/tree.jpeg'),
                   SizedBox(height: 5),
-                  Text('link')
+                  Text('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEA3ENXdw3RHQMzvdpnSV_IGHfMjNvViYST4KyY_MYd63EfSszh4UZAWCsjMbv0PhVjoA&usqp=CAU')
                 ],
               ),
             ),

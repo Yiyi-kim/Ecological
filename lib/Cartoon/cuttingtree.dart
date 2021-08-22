@@ -139,7 +139,7 @@ class Cartoon2 extends StatelessWidget {
 
   static Route<void> _fw1(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon2()
+        builder: (BuildContext context) => const Cartoon1()
     );
   }
 

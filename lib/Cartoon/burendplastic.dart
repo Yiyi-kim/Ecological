@@ -103,21 +103,15 @@ class Cartoon1 extends StatelessWidget {
           Row(children: [
             Expanded(flex: 4, child: Container(color: Colors.transparent.withOpacity(0))),
             Expanded(flex: 1,
-                child: Ink(
-                  decoration: const ShapeDecoration(
-                    color: Colors.blueAccent,
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_right,size: 30),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).restorablePushAndRemoveUntil(
-                          _fw2,
-                          ModalRoute.withName('/fw1')
-                      );
-                    },
-                  ),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.of(context).restorablePushAndRemoveUntil(
+                        _fw2,
+                        ModalRoute.withName('/fw1')
+                    );
+                  },
+                  child: const Icon(Icons.arrow_right,size: 40),
+                  backgroundColor: Colors.blueAccent,
                 )
             ),
           ])
@@ -205,41 +199,29 @@ class Cartoon2 extends StatelessWidget {
                 SizedBox(height: 15),
                 Row(children: [
                   Expanded(flex: 1,
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: Colors.redAccent,
-                          shape: CircleBorder(),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(Icons.arrow_left,size: 30),
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
+                    child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.of(context).restorablePushAndRemoveUntil(
                               _fw1,
                               ModalRoute.withName('/fw2')
-                            );
-                          },
-                        ),
-                      )
+                          );
+                        },
+                        child: const Icon(Icons.arrow_left,size: 40),
+                      backgroundColor: Colors.redAccent,
+                    ),
                   ),
                   Expanded(flex: 3, child: Container(color: Colors.transparent.withOpacity(0))),
                   Expanded(flex: 1,
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: Colors.blueAccent,
-                          shape: CircleBorder(),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(Icons.arrow_right,size: 30),
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                                _fw3,
-                                ModalRoute.withName('/fw2')
-                            );
-                          },
-                        ),
-                      )
+                      child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.of(context).restorablePushAndRemoveUntil(
+                            _fw3,
+                            ModalRoute.withName('/fw2')
+                          );
+                        },
+                        child: const Icon(Icons.arrow_right,size: 40),
+                        backgroundColor: Colors.blueAccent,
+                      ),
                   ),
                 ])
               ])

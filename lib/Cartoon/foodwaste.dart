@@ -12,7 +12,8 @@ void main() {
     routes: {
       '/': (context) => MyStatefulWidget(),
       '/fw1' : (context) => Cartoon1(),
-      '/fw2' : (context) => Cartoon2()
+      '/fw2' : (context) => Cartoon2(),
+      '/fw3' : (context) => Cartoon3()
     },
   ));
 }
@@ -136,6 +137,15 @@ class Cartoon1 extends StatelessWidget {
 
 class Cartoon2 extends StatelessWidget {
   const Cartoon2({Key? key}) : super (key : key);
+
+  void main() {
+    runApp(MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/fw2' : (context) => Cartoon2()
+      },
+    ));
+  }
 
   static Route<void> _fw3(BuildContext context, Object? arguments) {
     return MaterialPageRoute<void>(
