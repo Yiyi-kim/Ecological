@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/quiz/body.dart';
+import 'package:flutter_app/quiz/Components/body.dart';
 import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:get/get.dart';
 
@@ -21,6 +21,16 @@ class _QuizScreen extends State<QuizScreen> {
         centerTitle: true,
         backgroundColor: Colors.green,
         actions: [],
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            _controller.resetTheQnNum();
+            Navigator.pop(context, false);
+            // _controller.nextQuestion();
+            // Navigator.pop(context, false);
+          },
+        ),
       ),
       body: Body(),
     );

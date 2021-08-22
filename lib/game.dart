@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Recycle/Screen/first_screen.dart';
-import 'package:flutter_app/quiz/start_quiz.dart';
+import 'package:flutter_app/quiz/screens/start_quiz.dart';
 
 class Game extends StatefulWidget {
   const Game({Key? key}) : super(key: key);

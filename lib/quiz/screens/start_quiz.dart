@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/quiz/quiz_screen.dart';
+import 'package:flutter_app/quiz/screens/quiz_screen.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import 'Controller/questioncontroller.dart';
+import '../Controller/questioncontroller.dart';
 
 class Quiz extends StatefulWidget {
-  //final _questionController = Get.put(QuestionController());
   Quiz({Key? key}) : super(key: key);
 
   @override
@@ -61,7 +60,6 @@ class _QuizState extends State<Quiz> {
               primary: Colors.green,
             ),
             onPressed: () {
-              //_questionController.resetQuestionNumber();
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => QuizScreen()));
             },

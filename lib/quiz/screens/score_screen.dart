@@ -43,6 +43,8 @@ class ScoreScreen extends StatelessWidget {
               GoBackButton(
                 () {
                   _qnController.refreshState();
+                  // _qnController.nextQuestion();
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (_) => MyStatefulWidget()));
                 },

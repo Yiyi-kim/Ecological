@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/quiz/questions.dart';
-import 'package:flutter_app/quiz/score_screen.dart';
+import 'package:flutter_app/quiz/Components/questions.dart';
+import 'package:flutter_app/quiz/screens/score_screen.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
@@ -50,15 +50,12 @@ class QuestionController extends GetxController
 
   @override
   void onInit() {
-    _pageController = PageController(initialPage: 1, keepPage: false);
+    _pageController = PageController();
     update();
     super.onInit();
-    _pageController.addListener(() {
-      _questionNumber.value = _pageController.page!.round() + 1;
-    });
   }
 
-  void resetQuestionNumber() => _questionNumber.value = 1;
+  // void resetQuestionNumber() => _questionNumber.value = 1;
 
   //Called just b4 the controller is deleted from the memory
   @override
@@ -78,13 +75,6 @@ class QuestionController extends GetxController
     Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
-
-    // Future.delayed(Duration(seconds: 2), () {
-    //   Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(
-    //           builder: (_) => ScoreScreen()));
-    // });
   }
 
   void updateTheQnNum(int index) {
@@ -95,7 +85,7 @@ class QuestionController extends GetxController
     if (_questionNumber.value != 5) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: Duration(milliseconds: 100), curve: Curves.ease);
+          duration: Duration(milliseconds: 150), curve: Curves.ease);
     } else {
       Get.to(ScoreScreen(
         key: Get.key,
@@ -117,18 +107,26 @@ class QuestionController extends GetxController
     return subList;
   }
 
+  void resetTheQnNum() {
+    _questionNumber.value = 1;
+  }
+
   void refreshState() {
     _questionNumber.value = 1;
     _numOfCorrectAns = 0;
     _selectedAns = 0;
     _correctAns = 0;
     _isAnswered = false;
-    //  final _questionController = Get.put(QuestionController());
-    //dispose();
-    //_pageController.dispose();
-    //late int _pageController = 0;
-    //PageController _pageController =0 as PageController;
-    //_pageController.dispose();
-    //pageController.jumpToPage(0);
+    //Get.to(ScoreScreen());
+    // if (_questionNumber.value != 5) {
+    //   _isAnswered = false;
+    //   _pageController.nextPage(
+    //       duration: Duration(milliseconds: 100), curve: Curves.ease);
+    // } else {
+    //   Get.to(ScoreScreen(
+    //     key: Get.key,
+    //   ));
+    // }
+    // nextQuestion();
   }
 }

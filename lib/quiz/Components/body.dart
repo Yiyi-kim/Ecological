@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/quiz/question_card.dart';
+import 'package:flutter_app/quiz/Components/question_card.dart';
 import 'package:flutter_app/quiz/Controller/questioncontroller.dart';
 import 'package:get/get.dart';
 
