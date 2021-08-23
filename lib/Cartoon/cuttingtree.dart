@@ -106,8 +106,10 @@ class Cartoon1 extends StatelessWidget {
                     color: Colors.blueAccent,
                     shape: CircleBorder(),
                   ),
+                  height: 60,
+                  width: 60,
                   child: IconButton(
-                    icon: const Icon(Icons.arrow_right,size: 30),
+                    icon: const Icon(Icons.arrow_right,size: 40),
                     color: Colors.white,
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon2()));
@@ -184,8 +186,10 @@ class Cartoon2 extends StatelessWidget {
                           color: Colors.redAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_left,size: 30),
+                          icon: const Icon(Icons.arrow_left,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.pop(context);
@@ -200,8 +204,10 @@ class Cartoon2 extends StatelessWidget {
                           color: Colors.blueAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_right,size: 30),
+                          icon: const Icon(Icons.arrow_right,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon3()));
@@ -279,8 +285,10 @@ class Cartoon3 extends StatelessWidget {
                           color: Colors.redAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_left,size: 30),
+                          icon: const Icon(Icons.arrow_left,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.pop(context);
@@ -295,8 +303,10 @@ class Cartoon3 extends StatelessWidget {
                           color: Colors.blueAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.view_headline_rounded,size: 30),
+                          icon: const Icon(Icons.view_headline_rounded,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);

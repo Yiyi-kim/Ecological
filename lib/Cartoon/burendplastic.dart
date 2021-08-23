@@ -94,14 +94,21 @@ class Cartoon1 extends StatelessWidget {
           Row(children: [
             Expanded(flex: 4, child: Container(color: Colors.transparent.withOpacity(0))),
             Expanded(flex: 1,
-                child: FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon2()));
-                  },
-                  child: const Icon(Icons.arrow_right,size: 40),
-                  backgroundColor: Colors.blueAccent,
-                )
-            ),
+              child: Ink(
+                decoration: const ShapeDecoration(
+                  color: Colors.blueAccent,
+                  shape: CircleBorder(),
+              ),
+              height: 60,
+              width: 60,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_right,size: 40),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon2()));
+                  }),
+              ),
+            )
           ])
         ])
       ],
@@ -166,23 +173,39 @@ class Cartoon2 extends StatelessWidget {
                 SizedBox(height: 15),
                 Row(children: [
                   Expanded(flex: 1,
-                    child: FloatingActionButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Icon(Icons.arrow_left,size: 40),
-                      backgroundColor: Colors.redAccent,
-                    ),
+                      child: Ink(
+                        decoration: const ShapeDecoration(
+                          color: Colors.blueAccent,
+                          shape: CircleBorder(),
+                        ),
+                        height: 60,
+                        width: 60,
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_right, size:40),
+                          color: Colors.white,
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      )
                   ),
                   Expanded(flex: 3, child: Container(color: Colors.transparent.withOpacity(0))),
                   Expanded(flex: 1,
-                      child: FloatingActionButton(
+                    child: Ink(
+                      decoration: const ShapeDecoration(
+                        color: Colors.blueAccent,
+                        shape: CircleBorder(),
+                      ),
+                      height: 60,
+                      width: 60,
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_right, size:40),
+                        color: Colors.white,
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon3()));
                         },
-                        child: const Icon(Icons.arrow_right,size: 40),
-                        backgroundColor: Colors.blueAccent,
                       ),
+                    )
                   ),
                 ])
               ])
@@ -254,8 +277,10 @@ class Cartoon3 extends StatelessWidget {
                           color: Colors.redAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_left,size: 30),
+                          icon: const Icon(Icons.arrow_left,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.pop(context);
@@ -270,8 +295,10 @@ class Cartoon3 extends StatelessWidget {
                           color: Colors.blueAccent,
                           shape: CircleBorder(),
                         ),
+                        height: 60,
+                        width: 60,
                         child: IconButton(
-                          icon: const Icon(Icons.view_headline_rounded,size: 30),
+                          icon: const Icon(Icons.view_headline_rounded,size: 40),
                           color: Colors.white,
                           onPressed: () {
                             Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
