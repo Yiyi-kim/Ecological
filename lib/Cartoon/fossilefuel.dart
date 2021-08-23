@@ -73,13 +73,6 @@ class _FossileFuel extends State<FossileFuel> {
 class Cartoon1 extends StatelessWidget {
   const Cartoon1({Key? key}) : super(key: key);
 
-  static Route<void> _fw2(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon2()
-    );
-  }
-
-
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.start,
@@ -121,10 +114,7 @@ class Cartoon1 extends StatelessWidget {
                     icon: const Icon(Icons.arrow_right,size: 30),
                     color: Colors.white,
                     onPressed: () {
-                      Navigator.of(context).restorablePushAndRemoveUntil(
-                        _fw2,
-                        ModalRoute.withName('/fw1')
-                      );
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon2()));
                     },
                   ),
                 )
@@ -138,25 +128,6 @@ class Cartoon1 extends StatelessWidget {
 
 class Cartoon2 extends StatelessWidget {
   const Cartoon2({Key? key}) : super(key: key);
-
-  static Route<void> _fw1(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon1()
-    );
-  }
-
-  static Route<void> _fw3(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon3()
-    );
-  }
-
-  static Route<void> _Rd(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const MyStatefulWidget()
-    );
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -179,10 +150,7 @@ class Cartoon2 extends StatelessWidget {
         Icon(Icons.arrow_back_rounded,
             size: 35, color: Colors.green),
             onPressed: () {
-              Navigator.of(context).restorablePushAndRemoveUntil(
-                _Rd,
-                ModalRoute.withName('/fw2')
-              );
+              Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
             }
         ),
       ),
@@ -224,10 +192,7 @@ class Cartoon2 extends StatelessWidget {
                           icon: const Icon(Icons.arrow_left,size: 30),
                           color: Colors.white,
                           onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                              _fw1,
-                              ModalRoute.withName('/fw2')
-                            );
+                            Navigator.pop(context);
                           }
                         ),
                       )
@@ -243,10 +208,7 @@ class Cartoon2 extends StatelessWidget {
                           icon: const Icon(Icons.arrow_right,size: 30),
                           color: Colors.white,
                           onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                              _fw3,
-                              ModalRoute.withName('/fw2')
-                            );
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Cartoon3()));
                           },
                         ),
                       )
@@ -260,20 +222,7 @@ class Cartoon2 extends StatelessWidget {
 }
 
 class Cartoon3 extends StatelessWidget {
-  const Cartoon3({Key? key}) : super(key : key);
-
-  static Route<void> _fw2(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Cartoon2()
-    );
-  }
-
-  static Route<void> _Rd(BuildContext context, Object? arguments) {
-    return MaterialPageRoute<void>(
-        builder: (BuildContext context) => const MyStatefulWidget()
-    );
-  }
-
+  const Cartoon3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -296,10 +245,7 @@ class Cartoon3 extends StatelessWidget {
         Icon(Icons.arrow_back_rounded,
             size: 35, color: Colors.green),
             onPressed: () {
-          Navigator.of(context).restorablePushAndRemoveUntil(
-            _Rd,
-            ModalRoute.withName('/fw3')
-          );
+              Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
             }
         ),
       ),
@@ -341,10 +287,7 @@ class Cartoon3 extends StatelessWidget {
                           icon: const Icon(Icons.arrow_left,size: 30),
                           color: Colors.white,
                           onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                              _fw2,
-                              ModalRoute.withName('/fw3')
-                            );
+                            Navigator.pop(context);
                           },
                         ),
                       )
@@ -360,10 +303,7 @@ class Cartoon3 extends StatelessWidget {
                           icon: const Icon(Icons.view_headline_rounded,size: 30),
                           color: Colors.white,
                           onPressed: () {
-                            Navigator.of(context).restorablePushAndRemoveUntil(
-                              _Rd,
-                              ModalRoute.withName('/fw3')
-                            );
+                            Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
                           },
                         ),
                       )
