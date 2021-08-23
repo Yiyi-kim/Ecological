@@ -71,14 +71,18 @@ class Cartoon1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    dynamic SH = MediaQuery.of(context).size.height;
+    dynamic SW = MediaQuery.of(context).size.width;
+
     return Column(mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(height: 50),
         Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 480,
-                width: 390,
+                height: SH * 0.6,
+                width: SW * 0.95,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                         Radius.circular(13)),
@@ -129,6 +133,10 @@ class Cartoon2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    dynamic SH = MediaQuery.of(context).size.height;
+    dynamic SW = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const
@@ -158,8 +166,8 @@ class Cartoon2 extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 480,
-                  width: 390,
+                  height: SH * 0.6,
+                  width: SW * 0.95,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
                           Radius.circular(13)),
@@ -228,6 +236,10 @@ class Cartoon3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    dynamic SH = MediaQuery.of(context).size.height;
+    dynamic SW = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const
@@ -257,8 +269,8 @@ class Cartoon3 extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 480,
-                  width: 390,
+                  height: SH * 0.6,
+                  width: SW * 0.95,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
                           Radius.circular(13)),
